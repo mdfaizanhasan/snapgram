@@ -1,5 +1,4 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-
 import { INavLink } from "@/types";
 import { sidebarLinks } from "@/constants";
 import { Loader } from "@/components/shared";
@@ -25,7 +24,7 @@ const LeftSidebar = () => {
   };
 
   return (
-    <nav className="leftsidebar">
+    <nav className="leftsidebar overflow-auto">
       <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 items-center">
           <img
