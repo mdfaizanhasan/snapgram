@@ -20,7 +20,7 @@ import { PostValidation } from '@/lib/validation';
 import { useToast } from '@/components/ui/use-toast';
 import { useUserContext } from '@/context/AuthContext';
 
-import {FileUploader, Loader} from '../shared';
+import {FileUploader, Loader} from '@/components/shared';
 
 import { useCreatePost, useUpdatePost } from '@/lib/react-query/queries';
 
@@ -44,9 +44,9 @@ const PostForm = ({ post, action }: PostFormProps) => {
   });
 
   // Query
-  const { mutateAsync: createPost, isLoading: isLoadingCreate } =
+  const { mutateAsync: createPost, isPending: isLoadingCreate } =
     useCreatePost();
-  const { mutateAsync: updatePost, isLoading: isLoadingUpdate } =
+  const { mutateAsync: updatePost, isPending: isLoadingUpdate } =
     useUpdatePost();
 
   // Handler
